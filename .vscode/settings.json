@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "render.com",
+            "connectString": "postgresql://cse340:tBY9Nz5wbTpCFtatPdMWzbr3ykWzBI2C@dpg-d1mas9idbo4c73f3c050-a.ohio-postgres.render.com/cse340_jud4"
+        }
+    ]
+}
