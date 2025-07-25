@@ -47,8 +47,12 @@ nav ul {
 
 nav li {
   padding: 0.5rem 1rem;
-  color: white;
   font-weight: bold;
+}
+
+nav li a{
+  text-decoration: none;
+  color: white;
 }
 
 main h1 {
@@ -159,6 +163,97 @@ footer {
   margin-top: 2rem;
 }
 
+.vehicle-detail {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+}
+
+.vehicle-image img {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.vehicle-info {
+  flex: 1;
+  min-width: 300px;
+  color: #333;
+}
+
+.vehicle-info h1 {
+  color: #02b0d2;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.vehicle-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.vehicle-info strong {
+  color: #555;
+}
+
+/* Vehicle Listing Grid */
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Each Vehicle Card */
+#inv-display li {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image inside each card */
+#inv-display img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Vehicle Title + Price box */
+.namePrice {
+  margin-top: 1rem;
+}
+
+.namePrice h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.namePrice h2 a {
+  text-decoration: underline;
+  color: #0033cc;
+}
+
+.namePrice span {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+  margin-top: 0.25rem;
+}
+
+
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -180,5 +275,18 @@ footer {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vehicle-detail {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .vehicle-image img {
+    max-width: 100%;
+  }
+
+  .vehicle-info {
+    min-width: auto;
   }
 }

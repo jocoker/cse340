@@ -64,4 +64,25 @@ Util.buildClassificationGrid = async function(data){
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
+
+Util.buildVehicleDetail = async function (vehicle) {
+  if (!vehicle) return '<p class="notice">Vehicle information not available.</p>';
+
+  return `
+    <div class="vehicle-detail">
+      <div class="vehicle-image">
+        <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" />
+      </div>
+      <div class="vehicle-info">
+        <h1>${vehicle.inv_make} ${vehicle.inv_model}</h1>
+        <p><strong>Year:</strong> ${vehicle.inv_year}</p>
+        <p><strong>Price:</strong> $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>
+        <p><strong>Mileage:</strong> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)} miles</p>
+        <p><strong>Description:</strong> ${vehicle.inv_description}</p>
+        <p><strong>Color:</strong> ${vehicle.inv_color}</p>
+      </div>
+    </div>
+  `;
+};
+
 module.exports = Util
