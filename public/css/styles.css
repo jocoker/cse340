@@ -165,24 +165,28 @@ footer {
 
 .vehicle-detail {
   display: flex;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 2rem;
   align-items: flex-start;
   flex-wrap: wrap;
-  font-family: Arial, sans-serif;
+  margin-top: 2rem;
+}
+
+.vehicle-image {
+  flex: 1 1 45%;
 }
 
 .vehicle-image img {
-  max-width: 450px;
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .vehicle-info {
-  flex: 1;
-  min-width: 300px;
+  flex: 1 1 45%;
   color: #333;
+  font-size: 1.1rem;
 }
 
 .vehicle-info h1 {

@@ -1,8 +1,15 @@
 <main>
   <h1><%= title %></h1>
+
   <div class="error-message">
     <p><%- message %></p>
-    <p>Oops! Something went sideways. The web gremlins must be at it again 🐛</p>
+
+    <% if (title === 500 || title === '500') { %>
+      <p>It looks like something went wrong on our end. We're working on it!</p>
+    <% } else if (title === 404 || title === '404') { %>
+      <p>We couldn't find the page you're looking for. Please check the URL or return home.</p>
+    <% } %>
+
     <a href="/">Back to safety →</a>
   </div>
 </main>
