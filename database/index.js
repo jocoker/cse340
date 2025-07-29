@@ -1,20 +1,18 @@
 const { Pool } = require("pg")
 require("dotenv").config()
 
-// Determine SSL settings based on environment
-const isDev = process.env.NODE_ENV === "development"
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: isDev ? false : { rejectUnauthorized: false },
+  ssl: {
+    rejectUnauthorized: false, // Required by Render
+  },
 })
 
-// Unified export with query logging
 const db = {
   query: async (text, params) => {
     try {
       const res = await pool.query(text, params)
-      if (isDev) {
+      if (process.env.NODE_ENV === "development") {
         console.log("executed query", { text })
       }
       return res
