@@ -257,6 +257,74 @@ footer {
   margin-top: 0.25rem;
 }
 
+#login-form {
+  display: block;
+  margin: 1rem auto 0 auto;
+  background-color: #02b0d2;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  width: 100%;
+  color: black;
+  font-family: sans-serif;
+  
+}
+
+#login-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  border: none;
+  border-radius: 4px;
+}
+
+#login-form p.password-info {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #000;
+  margin-top: 0.5rem;
+}
+
+#login-form button {
+  display: block;
+  margin: 1rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#login-form p {
+  text-align: center;
+  margin-top: 1rem;
+  color: black;
+  
+}
+#login-form p a {
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.flash-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 
 @media (max-width: 600px) {
   nav ul {

@@ -15,6 +15,8 @@ const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index')
 const session = require("express-session")
 const pool = require('./database/')
+const accountRoute = require("./routes/accountRoute");
+
 
 /* ***********************
  * Middleware
@@ -29,6 +31,13 @@ const pool = require('./database/')
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
 
 
 
@@ -55,6 +64,10 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory routes
 app.use("/inv", inventoryRoute)
+
+// Account route
+app.use("/account", accountRoute);
+
 
 /* ***********************
 * Express Error Handler
