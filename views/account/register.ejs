@@ -13,15 +13,15 @@
   <form id="register-form" action="/account/register" method="post">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="account_firstname" required 
-            value="<%= typeof account_firstname != 'undefined' ? account_firstname : '' %>">
+            value="<%= locals.account_firstname %>">
 
     <label for="last_name">Last Name:</label>
     <input type="text" id="last_name" name="account_lastname" required 
-           value="<%= typeof account_lastname != 'undefined' ? account_lastname : '' %>">
+           value="<%= locals.account_lastname %>">
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="account_email" required 
-           value="<%= typeof account_email != 'undefined' ? account_email : '' %>">
+           value="<%= locals.account_email %>">
 
     <label for="password">Password:</label>
       <input type="password" id="password" name="account_password" required
