@@ -1,0 +1,15 @@
+<main id="account-management">
+  <h1><%= title %></h1>
+
+  <% if (message && message.length) { %>
+    <div class="flash-message"><%= message %></div>
+  <% } %>
+
+  <% if (errors) { %>
+    <div class="errors">
+      <% errors.forEach(e => { %><p><%= e.msg %></p><% }) %>
+    </div>
+  <% } %>
+
+  <p>You’re logged in.</p>
+</main>

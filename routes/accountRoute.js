@@ -11,7 +11,7 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Process the registration data
 router.post(
   "/register",
-  regValidate.registationRules(),
+  regValidate.registrationRules(),
   regValidate.checkRegData,
   utilities.handleErrors(accountController.registerAccount)
 )
@@ -19,15 +19,19 @@ router.post(
 // Route to build the register view
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
-// Process the login attempt
-// Process the login attempt
+// Process the login request
 router.post(
   "/login",
   regValidate.loginRules(),
   regValidate.checkLoginData,
-  (req, res) => {
-    res.status(200).send('login process')
-  }
+  utilities.handleErrors(accountController.accountLogin)
+)
+
+// Default account dashboard (after successful login redirect)
+router.get(
+  "/",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.buildAccountManagement)
 )
 
 
