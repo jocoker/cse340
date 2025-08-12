@@ -44,4 +44,13 @@ router.get(
   utilities.handleErrors(invController.editInventoryView)
 )
 
+// Process the update of an inventory item
+router.post(
+  "/update",
+  invValidate.inventoryRules(),  
+  invValidate.checkUpdateData,       
+  utilities.handleErrors(invController.updateInventory) 
+);
+
+
 module.exports = router;

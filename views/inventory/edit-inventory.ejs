@@ -1,4 +1,5 @@
 <main>
+    <div class="edit-form-wrapper">
     <h1><%=title %></h1>
 
     <% if (errors) { %>
@@ -11,13 +12,14 @@
         </ul>
         <% } %>
 
-            <% if (message) { %>
+            <% if (message && message.length > 0) { %>
                 <div class="flash-message">
-                    <%= message %>
+                    <%= message[0] %>
                 </div>
-                <% } %>
+            <% } %>
 
-                    <form action="/inv/update" method="post">
+
+                    <form id="updateForm" action="/inv/update" method="post">
                         <input type="hidden" name="inv_id" value="<%= inv_id %>">
                         <label for="classification_id">Classification</label>
                         <%- classificationSelect %> <!-- this is injected HTML, not escaped -->
@@ -58,6 +60,9 @@
                             <input type="text" name="inv_color" id="inv_color" required
                                 value="<%= typeof inv_color != 'undefined' ? inv_color : '' %>">
 
-                            <button type="submit">Update Vehicle</button>
+                            <button type="submit" disabled>Update Vehicle</button>
+                            
                     </form>
+                    <script src="/js/inv-update.js"></script>
+    </div>
 </main>

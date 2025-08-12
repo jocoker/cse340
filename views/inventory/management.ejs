@@ -1,8 +1,13 @@
 <main>
+  <div class="inventory-wrapper">
   <h1>Inventory Management</h1>
-  <% if (message) { %>
-    <div class="flash-message"><%= message %></div>
-  <% } %>
+
+  <% if (message && message.length > 0) { %>
+  <div class="flash-message"><%= message[0] %></div>
+<% } %>
+
+
+
   <ul>
     <li><a href="/inv/add-classification">Add New Classification</a></li>
     <li><a href="/inv/add-inventory">Add New Inventory</a></li>
@@ -20,5 +25,5 @@
 
 <!-- Hook up the page JS -->
 <script src="../../js/inventory.js"></script>
-
+  </div>
 </main>

@@ -18,6 +18,7 @@ const pool = require('./database/')
 const accountRoute = require("./routes/accountRoute");
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
+const flash = require("connect-flash")
 
 /* ***********************
  * Middleware
@@ -35,18 +36,12 @@ app.use(cookieParser())
   name: 'sessionId',
 }))
 
-// Express Messages Middleware
-app.use(require('connect-flash')())
+// Flash message middleware
+app.use(flash())
 
-app.use((req, res, next) => {
-  res.locals.message = req.flash("notice")
-  next()
-})
 
-app.use(function(req, res, next){
-  res.locals.messages = require('express-messages')(req, res)
-  next()
-})
+
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
