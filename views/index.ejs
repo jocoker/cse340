@@ -1,7 +1,19 @@
 <body>
   <main>
     <h1>Welcome to CSE Motors!</h1>
-    <%- messages() %>
+    <% if (errors) { %>
+      <ul class="notice">
+        <% errors.array().forEach(error => { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <% if (message && message.length > 0) { %>
+      <div class="flash-message">
+        <%= message[0] %>
+      </div>
+    <% } %>
       <section class="hero">
         <div class="hero-text">
           <h2>DMC Delorean</h2>

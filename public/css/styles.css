@@ -420,7 +420,7 @@ footer {
   text-decoration: underline;
 }
 
-.edit-form-wrapper {
+.form-wrapper {
   max-width: 500px;
   margin: 4rem auto;
   padding: 2rem;
@@ -429,25 +429,25 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.edit-form-wrapper h1 {
+.form-wrapper h1 {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #333;
 }
 
-.edit-form-wrapper label {
+.form-wrapper label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: #333;
 }
 
-.edit-form-wrapper input[type="text"],
-.edit-form-wrapper input[type="number"],
-.edit-form-wrapper input[type="file"],
-.edit-form-wrapper textarea,
-.edit-form-wrapper select {
+.form-wrapper input[type="text"],
+.form-wrapper input[type="number"],
+.form-wrapper input[type="file"],
+.form-wrapper textarea,
+.form-wrapper select {
   width: 100%;
   padding: 0.5rem 0.75rem;
   margin-bottom: 1.25rem;
@@ -458,14 +458,14 @@ footer {
   transition: border 0.2s;
 }
 
-.edit-form-wrapper input:focus,
-.edit-form-wrapper select:focus,
-.edit-form-wrapper textarea:focus {
+.form-wrapper input:focus,
+.form-wrapper select:focus,
+.form-wrapper textarea:focus {
   border-color: #007bff;
   outline: none;
 }
 
-.edit-form-wrapper button[type="submit"] {
+.form-wrapper button[type="submit"] {
   width: 100%;
   padding: 0.75rem;
   background-color: #007bff;
@@ -478,24 +478,21 @@ footer {
   transition: background-color 0.3s ease;
 }
 
-.edit-form-wrapper button[type="submit"]:hover {
+.form-wrapper button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.edit-form-wrapper button[disabled] {
+.form-wrapper button[disabled] {
   background-color: #aaa;
   cursor: not-allowed;
 }
 
-/* Flash and error message styling (already likely used elsewhere) */
-.flash-message {
-  /*background-color: #e6f9e6;*/
-  color: #155724;
-  /*border: 1px solid #c3e6cb;*/
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
+.form-wrapper p{
+  color: red;
+  text-align: center;
 }
+
+
 
 .notice {
   background-color: #ffefef;
@@ -593,17 +590,106 @@ footer {
   background-color: #f1f1f1;
 }
 
-.flash-message {
-  background-color: #d4edda; /* ✅ light green background */
-  color: #155724; /* ✅ dark green text */
-  border: 1px solid #c3e6cb; /* ✅ subtle green border */
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
+
+
+/* === DELETE PAGE === */
+.delete-form-wrapper {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.delete-form-wrapper h1 {
   text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Input fields */
+.delete-form-wrapper label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
+.delete-form-wrapper input[type="text"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #eee;
+  color: #333;
+}
+
+/* Read-only appearance */
+.delete-form-wrapper input[readonly] {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Button */
+.delete-form-wrapper button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-form-wrapper button:hover {
+  background-color: #e74c3c;
+}
+
+/* === ACCOUNT MANAGEMENT PAGE === */
+.mgmnt-wrapper {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mgmnt-wrapper h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.mgmnt-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.mgmnt-wrapper ul li {
+  margin: 1rem 0;
+}
+
+.mgmnt-wrapper ul li a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.mgmnt-wrapper ul li a:hover {
+  background-color: #0056b3;
+}
 
 
 

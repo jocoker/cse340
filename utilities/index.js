@@ -132,5 +132,30 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
+
+
+const handleLogout = (req, res) => {
+  res.clearCookie("jwt")
+  req.flash("notice", "You have successfully logged out.")
+  res.redirect("/")
+}
+
+/**
+ * Middleware to allow only Admin or Employee account types
+ */
+Util.checkEmployeeOrAdmin = (req, res, next) => {
+  const accountType = res.locals.accountData?.account_type
+  if (accountType === "Employee" || accountType === "Admin") {
+    return next()
+  } else {
+    req.flash("notice", "Access denied. Admin or Employee only.")
+    return res.redirect("/account/login")
+  }
+}
+
+
  
-module.exports = Util
+module.exports = {
+  ...Util,
+  handleLogout,
+}
