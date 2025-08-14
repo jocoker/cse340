@@ -1,0 +1,30 @@
+<main>
+  <h1><%= title %></h1>
+
+  <% if (message) { %>
+    <div class="flash-message"><%= message %></div>
+  <% } %>
+
+  <% if (!favorites || favorites.length === 0) { %>
+    <p>You have not saved any vehicles yet.</p>
+  <% } else { %>
+    <ul class="vehicle-grid">
+      <% favorites.forEach(v => { %>
+        <li class="vehicle-card">
+          <a href="/inv/detail/<%= v.inv_id %>">
+            <img src="<%= v.inv_thumbnail || '/images/no-image.png' %>" alt="<%= v.inv_make %> <%= v.inv_model %>">
+            <div class="meta">
+              <h3><%= v.inv_year %> <%= v.inv_make %> <%= v.inv_model %></h3>
+              <p>$<%= Number(v.inv_price).toLocaleString() %></p>
+              <p class="saved-on">Saved <%= new Date(v.created_at).toLocaleString() %></p>
+            </div>
+          </a>
+          <form action="/favorite/remove" method="post">
+            <input type="hidden" name="inv_id" value="<%= v.inv_id %>">
+            <button type="submit" class="btn btn-secondary">Remove</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</main>

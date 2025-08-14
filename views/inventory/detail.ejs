@@ -9,5 +9,18 @@
     <p><strong>Mileage:</strong> <%= new Intl.NumberFormat('en-US').format(vehicle.inv_miles) %> miles</p>
     <p><strong>Color:</strong> <%= vehicle.inv_color %></p>
     <p class="vehicle-description"><%= vehicle.inv_description %></p>
+    <% if (locals.loggedin) { %>
+      <form action="<%= isFavorite ? '/favorite/remove' : '/favorite' %>" method="post" class="fav-form">
+        <input type="hidden" name="inv_id" value="<%= vehicle.inv_id %>">
+        <button type="submit" class="btn <%= isFavorite ? 'btn-secondary' : 'btn-primary' %>">
+          <%= isFavorite ? 'Remove from Saved' : 'Save Vehicle' %>
+        </button>
+      </form>
+    <% } %>
+
+    <% if (message) { %>
+      <div class="flash-message"><%= message %></div>
+    <% } %>
+
   </div>
 </main>

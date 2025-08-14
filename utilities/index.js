@@ -1,6 +1,7 @@
 const invModel = require("../models/inventory-model")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
+const favoriteModel = require("../models/favorite-model")
 
 const Util = {}
 
@@ -153,9 +154,19 @@ Util.checkEmployeeOrAdmin = (req, res, next) => {
   }
 }
 
+async function markFavoriteState(req, res, inv_id) {
+  if (!res.locals.loggedin) return false
+  try {
+    const account_id = res.locals.accountData.account_id
+    return await favoriteModel.isFavorite(account_id, inv_id)
+  } catch {
+    return false
+  }
+}
 
  
 module.exports = {
   ...Util,
   handleLogout,
+  markFavoriteState
 }

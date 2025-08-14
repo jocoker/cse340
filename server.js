@@ -20,6 +20,7 @@ const pool = require('./database/')
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const flash = require("connect-flash")
+const favoriteRoute = require("./routes/favoriteRoute")
 
 /* ***********************
  * Middleware
@@ -79,6 +80,10 @@ app.use("/inv", inventoryRoute)
 
 // Account route
 app.use("/account", accountRoute)
+
+
+app.use("/", favoriteRoute)
+
 
 /* ***********************
  * Express Error Handling

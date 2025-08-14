@@ -38,11 +38,18 @@ invCont.buildByInvId = async function (req, res, next) {
     const vehicle = data[0]
     const nav = await utilities.getNav()
 
-    res.render("inventory/detail", {
-      title: `${vehicle.inv_make} ${vehicle.inv_model}`,
-      nav,
-      vehicle
-    })
+    const isFav = res.locals.loggedin
+  ? await require("../utilities").markFavoriteState(req, res, inv_id)
+  : false
+
+  res.render("inventory/detail", {
+    title: `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`,
+    nav,
+    vehicle: data[0],
+    isFavorite: isFav,
+    message: req.flash("notice"),
+  })
+
   } catch (error) {
     next(error)
   }
