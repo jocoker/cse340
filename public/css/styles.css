@@ -465,6 +465,30 @@ form button:hover {
   background-color: #0056b3;
 }
 
+/* Override Save Vehicle button styling */
+.fav-form {
+  background-color: transparent; /* no colored box */
+  padding: 0; /* optional: remove extra padding */
+  box-shadow: none; /* optional: remove shadow */
+  max-width: none; /* optional: let it size naturally */
+}
+
+.fav-form button {
+  width: auto; /* don't force full width */
+  background-color: lightgray;
+  color: black;
+  font-weight: normal;
+  border: 1px solid black;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.fav-form button:hover {
+  background-color: lightgray;
+}
+
+
 /* === Responsive Design === */
 @media (max-width: 600px) {
   nav ul {

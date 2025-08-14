@@ -1,16 +1,6 @@
-<!-- **********************************************
-     * Footer Partial
-     * --------------------------------------------
-     * Displays the site footer on all pages.
-     * Dynamically shows the current year and
-     * includes a link to intentionally trigger
-     * a server error for testing purposes.
-     ********************************************** -->
-
 <% const d = new Date()
-   let year = d.getFullYear() %>
-
+let year = d.getFullYear() %>
 <footer>
-  <p class="copyright">&copy; <%= year %>, CSE 340 App</p>
+  <p class="copyright">&copy <%= year %>, CSE 340 App</p>
   <p><a href="/inv/error-test">Trigger Server Error</a></p>
 </footer>
