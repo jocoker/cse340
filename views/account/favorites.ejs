@@ -1,4 +1,13 @@
-<main>
+<!-- **********************************************
+     * Favorites View
+     * --------------------------------------------
+     * Displays the logged-in user's saved vehicles.
+     * Shows a message if no favorites exist.
+     * Provides a "Remove" button for each vehicle.
+     * Uses #inv-display and .vehicle-card styles.
+     ********************************************** -->
+
+<main id="favorites-wrapper">
   <h1><%= title %></h1>
 
   <% if (message) { %>
@@ -6,20 +15,22 @@
   <% } %>
 
   <% if (!favorites || favorites.length === 0) { %>
-    <p>You have not saved any vehicles yet.</p>
+    <p class="notice">You have not saved any vehicles yet.</p>
   <% } else { %>
-    <ul class="vehicle-grid">
+    <ul id="inv-display" class="favorites-list">
       <% favorites.forEach(v => { %>
         <li class="vehicle-card">
-          <a href="/inv/detail/<%= v.inv_id %>">
-            <img src="<%= v.inv_thumbnail || '/images/no-image.png' %>" alt="<%= v.inv_make %> <%= v.inv_model %>">
-            <div class="meta">
+          <a href="/inv/detail/<%= v.inv_id %>" title="View details for <%= v.inv_year %> <%= v.inv_make %> <%= v.inv_model %>">
+            <img 
+              src="<%= v.inv_thumbnail || '/images/no-image.png' %>" 
+              alt="Image of <%= v.inv_make %> <%= v.inv_model %>">
+            <div class="vehicle-meta">
               <h3><%= v.inv_year %> <%= v.inv_make %> <%= v.inv_model %></h3>
-              <p>$<%= Number(v.inv_price).toLocaleString() %></p>
-              <p class="saved-on">Saved <%= new Date(v.created_at).toLocaleString() %></p>
+              <p class="price">$<%= Number(v.inv_price).toLocaleString() %></p>
+              <p class="saved-on">Saved on <%= new Date(v.created_at).toLocaleDateString() %></p>
             </div>
           </a>
-          <form action="/favorite/remove" method="post">
+          <form action="/favorite/remove" method="post" class="remove-favorite-form">
             <input type="hidden" name="inv_id" value="<%= v.inv_id %>">
             <button type="submit" class="btn btn-secondary">Remove</button>
           </form>

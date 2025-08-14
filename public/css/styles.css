@@ -1,5 +1,12 @@
-/* style.css */
+/*
+===============================================
+ Main Stylesheet
+ Handles layout, navigation, forms, 
+ inventory listings, and responsive design.
+===============================================
+*/
 
+/* === Base Reset & Body === */
 body {
   margin: 10px 0;
   font-family: Arial, sans-serif;
@@ -16,17 +23,17 @@ body {
   padding: 1rem;
 }
 
+/* === Header & Navigation === */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-header a{
+header a {
   text-decoration: none;
   color: black;
 }
@@ -50,16 +57,12 @@ nav li {
   font-weight: bold;
 }
 
-nav li a{
+nav li a {
   text-decoration: none;
   color: white;
 }
 
-main h1 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
-
+/* === Hero Section === */
 .hero {
   position: relative;
   height: 300px;
@@ -85,7 +88,6 @@ main h1 {
   padding: 1rem;
   max-width: 200px;
   margin: 1rem;
-  
   border-radius: 8px;  
 }
 
@@ -98,9 +100,8 @@ main h1 {
 .hero-text ul {
   padding-left: 1.2rem;
   margin: 0.5rem 0;
-  line-height: 1.6;
   list-style-type: none; 
-  font-weight:bold; 
+  font-weight: bold; 
 }
 
 .hero-text button {
@@ -114,6 +115,7 @@ main h1 {
   margin-top: 1rem;
 }
 
+/* === Content Sections === */
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -121,7 +123,8 @@ main h1 {
   margin-top: 2rem;
 }
 
-.reviews, .upgrades {
+.reviews, 
+.upgrades {
   flex: 1 1 300px;
 }
 
@@ -157,12 +160,14 @@ main h1 {
   font-weight: bold;
 }
 
+/* === Footer === */
 footer {
   text-align: left;
   font-size: 0.85rem;
   margin-top: 2rem;
 }
 
+/* === Vehicle Detail Page === */
 .vehicle-detail {
   display: flex;
   gap: 2rem;
@@ -177,8 +182,6 @@ footer {
 
 .vehicle-image img {
   width: 100%;
-  max-width: 100%;
-  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -197,7 +200,6 @@ footer {
 }
 
 .vehicle-info p {
-  font-size: 1.1rem;
   margin-bottom: 0.8rem;
   line-height: 1.5;
 }
@@ -206,7 +208,7 @@ footer {
   color: #555;
 }
 
-/* Vehicle Listing Grid */
+/* === Inventory Listing Grid === */
 #inv-display {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -216,7 +218,6 @@ footer {
   margin: 0;
 }
 
-/* Each Vehicle Card */
 #inv-display li {
   background-color: #fff;
   border-radius: 10px;
@@ -227,21 +228,13 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Image inside each card */
 #inv-display img {
   max-width: 100%;
-  height: auto;
   border-radius: 8px;
 }
 
-/* Vehicle Title + Price box */
 .namePrice {
   margin-top: 1rem;
-}
-
-.namePrice h2 {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
 }
 
 .namePrice h2 a {
@@ -252,24 +245,18 @@ footer {
 .namePrice span {
   display: block;
   font-weight: bold;
-  font-size: 1rem;
-  color: #000;
   margin-top: 0.25rem;
 }
 
+/* === Login Form === */
 #login-form {
   display: block;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto;
   background-color: #02b0d2;
   padding: 2rem;
-  border: 2px solid #ccc;
   border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   max-width: 350px;
-  width: 100%;
-  color: black;
-  font-family: sans-serif;
-  
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 #login-form label {
@@ -278,13 +265,10 @@ footer {
   font-weight: bold;
 }
 
-#login-form input[type="email"],
-#login-form input[type="password"] {
+#login-form input {
   width: 100%;
   padding: 0.5rem;
-  font-size: 1rem;
   margin-top: 0.25rem;
-  border: none;
   border-radius: 4px;
 }
 
@@ -292,30 +276,6 @@ footer {
   font-size: 0.9rem;
   font-style: italic;
   color: #000;
-  margin-top: 0.5rem;
-}
-
-#login-form button {
-  display: block;
-  margin: 1rem auto 0 auto;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  color: #333;
-  border: 1px solid #333;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#login-form p {
-  text-align: center;
-  margin-top: 1rem;
-  color: black;
-  
-}
-#login-form p a {
-  color: black;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .flash-message {
@@ -324,21 +284,15 @@ footer {
   text-align: center;
 }
 
-/* FOR THE REGISTER FORM
-
-*/
+/* === Register Form === */
 #register-form {
   display: block;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto;
   background-color: #02b0d2;
   padding: 2rem;
-  border: 2px solid #ccc;
   border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   max-width: 350px;
-  width: 100%;
-  color: black;
-  font-family: sans-serif;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 #register-form label {
@@ -347,42 +301,14 @@ footer {
   font-weight: bold;
 }
 
-#register-form input[type="text"],
-#register-form input[type="email"],
-#register-form input[type="password"] {
+#register-form input {
   width: 100%;
   padding: 0.5rem;
-  font-size: 1rem;
   margin-top: 0.25rem;
-  border: none;
   border-radius: 4px;
 }
 
-
-#register-form button[type="submit"] {
-  display: block;
-  margin: 1rem auto 0 auto;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  color: #333;
-  border: 1px solid #333;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#register-form p {
-  text-align: center;
-  margin-top: 1rem;
-  color: black;
-}
-
-#register-form p a {
-  color: black;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* ===== Inventory Management Table ===== */
+/* === Inventory Management Table === */
 #inventoryDisplay {
   width: 100%;
   border-collapse: collapse;
@@ -393,7 +319,6 @@ footer {
 #inventoryDisplay thead {
   background-color: #333;
   color: #fff;
-  text-align: left;
 }
 
 #inventoryDisplay th,
@@ -410,265 +335,39 @@ footer {
   background-color: #e6f0ff;
 }
 
-#inventoryDisplay a {
-  color: #0056b3;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-#inventoryDisplay a:hover {
-  text-decoration: underline;
-}
-
-.form-wrapper {
-  max-width: 500px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-wrapper h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.form-wrapper label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.form-wrapper input[type="text"],
-.form-wrapper input[type="number"],
-.form-wrapper input[type="file"],
-.form-wrapper textarea,
-.form-wrapper select {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #f9f9f9;
-  transition: border 0.2s;
-}
-
-.form-wrapper input:focus,
-.form-wrapper select:focus,
-.form-wrapper textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-.form-wrapper button[type="submit"] {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.form-wrapper button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.form-wrapper button[disabled] {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.form-wrapper p{
-  color: red;
-  text-align: center;
-}
-
-
-
-.notice {
-  background-color: #ffefef;
-  color: #a94442;
-  border: 1px solid #f5c6cb;
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  list-style-type: disc;
-}
-
-/* Wrapper for inventory management */
-.inventory-wrapper {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading styles */
-.inventory-wrapper h1,
-.inventory-wrapper h2 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.inventory-wrapper p {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-/* Top links list */
-.inventory-wrapper ul {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-.inventory-wrapper ul li a {
-  text-decoration: none;
-  font-weight: bold;
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.inventory-wrapper ul li a:hover {
-  background-color: #0056b3;
-}
-
-/* Classification dropdown */
-.inventory-wrapper select {
-  display: block;
-  margin: 0 auto 2rem auto;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* Inventory display table */
-#inventoryDisplay {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-#inventoryDisplay th,
-#inventoryDisplay td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-#inventoryDisplay th {
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-#inventoryDisplay tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-#inventoryDisplay tr:hover {
-  background-color: #f1f1f1;
-}
-
-
-
-/* === DELETE PAGE === */
+/* === Delete Confirmation Page === */
 .delete-form-wrapper {
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
-  border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f9f9f9;
 }
 
-.delete-form-wrapper h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-/* Input fields */
-.delete-form-wrapper label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.delete-form-wrapper input[type="text"] {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #eee;
-  color: #333;
-}
-
-/* Read-only appearance */
-.delete-form-wrapper input[readonly] {
-  background-color: #eee;
-  cursor: not-allowed;
-}
-
-/* Button */
 .delete-form-wrapper button {
-  display: block;
   width: 100%;
   padding: 0.75rem;
-  font-size: 1rem;
   background-color: #c0392b;
   color: white;
-  border: none;
   border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .delete-form-wrapper button:hover {
   background-color: #e74c3c;
 }
 
-/* === ACCOUNT MANAGEMENT PAGE === */
+/* === Account Management Page === */
 .mgmnt-wrapper {
   max-width: 800px;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-}
-
-.mgmnt-wrapper h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #2c3e50;
 }
 
 .mgmnt-wrapper ul {
   list-style: none;
-  padding: 0;
   margin-top: 2rem;
 }
 
@@ -677,23 +376,96 @@ footer {
 }
 
 .mgmnt-wrapper ul li a {
-  display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: #007bff;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
 }
 
 .mgmnt-wrapper ul li a:hover {
   background-color: #0056b3;
 }
 
+/* === Top Header === */
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 0.75rem 1.5rem;
+}
 
+#top-header a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
 
+#top-header a:hover {
+  text-decoration: underline;
+}
 
+.siteName a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#tools {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.welcome-text {
+  margin-right: 0.5rem;
+  font-style: italic;
+}
+
+.logout-link {
+  color: #ffcccb;
+}
+
+/* === Global Form Styling === */
+form {
+  display: block;
+  margin: 1rem auto;
+  background-color: #02b0d2;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 350px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* === Responsive Design === */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -724,9 +496,5 @@ footer {
 
   .vehicle-image img {
     max-width: 100%;
-  }
-
-  .vehicle-info {
-    min-width: auto;
   }
 }

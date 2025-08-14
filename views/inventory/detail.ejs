@@ -1,3 +1,12 @@
+<!-- **********************************************
+     * Vehicle Detail View
+     * --------------------------------------------
+     * Displays full details for a single vehicle.
+     * - Shows image, make/model, year, price, mileage, color, and description.
+     * - If the user is logged in, displays a form to save or remove the vehicle from favorites.
+     * - Shows flash messages if present.
+     ********************************************** -->
+
 <main class="vehicle-detail">
   <div class="vehicle-image">
     <img src="<%= vehicle.inv_image %>" alt="Image of <%= vehicle.inv_make %> <%= vehicle.inv_model %>">
@@ -9,6 +18,7 @@
     <p><strong>Mileage:</strong> <%= new Intl.NumberFormat('en-US').format(vehicle.inv_miles) %> miles</p>
     <p><strong>Color:</strong> <%= vehicle.inv_color %></p>
     <p class="vehicle-description"><%= vehicle.inv_description %></p>
+
     <% if (locals.loggedin) { %>
       <form action="<%= isFavorite ? '/favorite/remove' : '/favorite' %>" method="post" class="fav-form">
         <input type="hidden" name="inv_id" value="<%= vehicle.inv_id %>">
@@ -21,6 +31,5 @@
     <% if (message) { %>
       <div class="flash-message"><%= message %></div>
     <% } %>
-
   </div>
 </main>

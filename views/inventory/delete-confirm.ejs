@@ -1,3 +1,12 @@
+<!-- **********************************************
+     * Delete Confirmation View
+     * --------------------------------------------
+     * Displays a confirmation form for deleting a vehicle.
+     * - Shows vehicle details in read-only fields.
+     * - Requires user to confirm deletion by submitting the form.
+     * - The deletion is permanent.
+     ********************************************** -->
+
 <main>
   <div class="form-wrapper">
     <h1><%= title %></h1>
@@ -18,7 +27,7 @@
 
     <p>Confirm Deletion - The delete is permanent.</p>
 
-    <form id = "deleteForm" action="/inv/delete" method="post">
+    <form id="deleteForm" action="/inv/delete" method="post">
       <input type="hidden" name="inv_id" value="<%= inv_id %>">
 
       <label for="inv_make">Make</label>
