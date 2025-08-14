@@ -1,17 +1,27 @@
+<!-- **********************************************
+     * Layout Wrapper View
+     * --------------------------------------------
+     * Provides the global page structure for the
+     * application, including the head, header,
+     * navigation, and footer partials.
+     * All other views are rendered inside the
+     * <main> element via the <%- body %> placeholder.
+     ********************************************** -->
+
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %>
+  <%- include('../partials/head') %>
 
-<body>
-    <div id ="wrapper">
-        <%- include('../partials/header') %>
-        <%- include('../partials/navigation') %>
+  <body>
+    <div id="wrapper">
+      <%- include('../partials/header') %>
+      <%- include('../partials/navigation') %>
 
-            <main>
-                <%- body %>
-            </main>
+      <main>
+        <%- body %>
+      </main>
 
-            <%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>
     </div>
-</body>
+  </body>
 </html>

@@ -1,29 +1,43 @@
+<!-- **********************************************
+     * Inventory Management View
+     * --------------------------------------------
+     * Provides admin/employee tools to:
+     *  - Add new classifications
+     *  - Add new inventory items
+     *  - Select a classification to view/edit vehicles
+     * 
+     * Includes:
+     *  - Flash message display for success/errors
+     *  - Server-generated classification dropdown
+     *  - Table dynamically populated by /js/inventory.js
+     *  - Noscript fallback message
+     ********************************************** -->
+
 <main>
   <div class="inventory-wrapper">
-  <h1>Inventory Management</h1>
+    <h1>Inventory Management</h1>
 
-  <% if (message && message.length > 0) { %>
-  <div class="flash-message"><%= message[0] %></div>
-<% } %>
+    <% if (message && message.length > 0) { %>
+      <div class="flash-message"><%= message[0] %></div>
+    <% } %>
 
+    <ul>
+      <li><a href="/inv/add-classification">Add New Classification</a></li>
+      <li><a href="/inv/add-inventory">Add New Inventory</a></li>
+    </ul>
 
+    <h2>Manage Inventory</h2>
+    <p>Select a classification to view its vehicles.</p>
 
-  <ul>
-    <li><a href="/inv/add-classification">Add New Classification</a></li>
-    <li><a href="/inv/add-inventory">Add New Inventory</a></li>
-  </ul>
-  <h2>Manage Inventory</h2>
-<p>Select a classification to view its vehicles.</p>
+    <!-- Render the classification <select> built in the controller -->
+    <%- classificationSelect %>
 
-<!-- Render the classification <select> built in the controller -->
-<%- classificationSelect %>
+    <!-- Table that JS will fill -->
+    <table id="inventoryDisplay"></table>
 
-<!-- Table that JS will fill -->
-<table id="inventoryDisplay"></table>
+    <noscript>JavaScript must be enabled to use this page.</noscript>
 
-<noscript>JavaScript must be enabled to use this page.</noscript>
-
-<!-- Hook up the page JS -->
-<script src="../../js/inventory.js"></script>
+    <!-- Hook up the page JS -->
+    <script src="../../js/inventory.js"></script>
   </div>
 </main>

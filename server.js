@@ -1,7 +1,10 @@
-/* ******************************************
- * This server.js file is the primary file of the 
- * application. It is used to control the project.
- *******************************************/
+/* **********************************************
+ * Server Entry Point
+ * --------------------------------------------
+ * Initializes the Express app, configures 
+ * middleware, sets up routes, and handles 
+ * errors for the CSE Motors application.
+ ********************************************** */
 
 /* ***********************
  * Require Statements
@@ -37,7 +40,6 @@ app.use((req, res, next) => {
   res.locals.accountData = res.locals.accountData || null
   next()
 })
-
 
 // Session management
 app.use(
@@ -81,9 +83,8 @@ app.use("/inv", inventoryRoute)
 // Account route
 app.use("/account", accountRoute)
 
-
+// Favorites route
 app.use("/", favoriteRoute)
-
 
 /* ***********************
  * Express Error Handling
